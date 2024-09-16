@@ -1,0 +1,19 @@
+﻿{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "lint": {},
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["coverage/**"]
+    }
+  },
+  "globalDependencies": ["tsconfig.json"],
+  "cache": {
+    "enabled": true,
+    "type": "filesystem"
+  }
+}
